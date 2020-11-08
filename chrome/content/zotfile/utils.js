@@ -271,4 +271,11 @@ Zotero.ZotFile.Utils = new function() {
                          .getService(Components.interfaces.nsIScriptableUnescapeHTML)
                          .parseFragment(html, !!isXML, baseURI, document.documentElement);
     }.bind(Zotero.ZotFile);
+
+
+
+  // From https://stackoverflow.com/a/1026087
+  this.capitalizeFirstLetter = function(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
 }

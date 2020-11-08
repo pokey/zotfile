@@ -303,7 +303,11 @@ Zotero.ZotFile.pdfAnnotations = new function() {
                     note += markup_formated;
                 else {
                     if(!(color_category in note))
-                        note[color_category] = this.Utils.str_format(format_title_color, {'title': str_title, 'date': date_str, 'color': color_category});
+                        note[color_category] = this.Utils.str_format(format_title_color, {
+                          'title': str_title,
+                          'date': date_str,
+                          'color': this.Utils.capitalizeFirstLetter(color_category_hex.split("-").join(" ")),
+                        });
                     note[color_category] += markup_formated;
                 }
             }
